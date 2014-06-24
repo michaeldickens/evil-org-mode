@@ -69,14 +69,16 @@
   "L" 'org-end-of-line
   ";t" 'org-show-todo-tree
   "o" '(lambda () (interactive) (evil-org-eol-call 'always-insert-item))
-  "O" '(lambda () (interactive) (evil-org-eol-call 'org-insert-heading))
-  "$" 'org-end-of-line
+  "e" 'org-end-of-line
   "^" 'org-beginning-of-line
   "<" 'org-metaleft
   ">" 'org-metaright
   ";a" 'org-agenda
   "-" 'org-cycle-list-bullet
-  (kbd "TAB") 'org-cycle)
+  (kbd "TAB") 'org-cycle
+  (kbd "M-RET") '(lambda () (interactive) (evil-org-eol-call 'org-insert-heading))
+  (kbd "M-S-RET") '(lambda () (interactive) (evil-org-eol-call 'org-insert-todo-heading))
+  )
 
 ;; normal & insert state shortcuts.
 (mapc (lambda (state)
